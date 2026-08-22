@@ -1,27 +1,15 @@
-Match Pets
+# Match Pets
 
-Projeto desenvolvido para a disciplina de Gestão de Software do curso de Ciência da Computação da FEI.
+Plataforma de adoção responsável de animais com sistema de compatibilidade entre adotantes e pets e acompanhamento pós-adoção.
 
-Sobre o projeto
+## Sobre o projeto
 
-O Match Pets é uma plataforma de adoção de animais que busca encontrar pets compatíveis com o perfil e a rotina do adotante.
+O Match Pets tem como objetivo auxiliar no processo de adoção de animais, buscando maior compatibilidade entre o perfil do adotante e as características do pet.
 
-A compatibilidade considera características como ambiente familiar, presença de crianças, outros animais, espaço disponível e comportamento do pet.
+Além do processo de adoção, o sistema contará com acompanhamento pós-adoção, permitindo o envio periódico de fotos e atualizações sobre o animal adotado.
 
-O sistema também poderá realizar um acompanhamento pós-adoção por meio do envio periódico de fotos e atualizações do animal.
+## Equipe
 
-Equipe
-
-Integrante| Papel
-Natasha Trindade| Product Owner (PO)
-Douglas Honda| Scrum Master (SM)
-Marcus Zelenato| Desenvolvedor
-
-Documentação
-
-- Lean Canvas
-- Product Vision
-
-Status
-
-Projeto em fase inicial de planejamento e definição.
+- **Product Owner (PO):** Natasha Trindade
+- **Scrum Master (SM):** Douglas Honda
+- **Desenvolvedor:** Marcus Zelenato
