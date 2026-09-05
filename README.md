@@ -11,6 +11,17 @@ Além do processo de adoção, o sistema contará com acompanhamento pós-adoç�
 ## Trello
 <img width="1919" height="939" alt="image" src="https://github.com/user-attachments/assets/461f170f-209d-4d45-a8be-8ef53f24f2ed" />
 
+## Definition of Done (DoD)
+
+Uma história está "Done/Concluída" quando:
+
+- Implementação concluída;
+- Código integrado ao repositório;
+- Testes realizados;
+- Critérios de aceitação atendidos;
+- Funcionalidade integrada ao sistema;
+- Não existem erros conhecidos que impeçam a entrega da funcionalidade.
+
 ## Equipe
 
 - **Product Owner (PO):** Natasha Trindade
