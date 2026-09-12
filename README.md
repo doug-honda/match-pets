@@ -16,12 +16,12 @@ Além do processo de adoção, o sistema contará com acompanhamento pós-adoç�
 
 Uma história está "Done/Concluída" quando:
 
-1 - Implementação concluída;
-2 - Código integrado ao repositório;
-3 - Testes realizados;
-4 - Critérios de aceitação atendidos;
-5 - Funcionalidade integrada ao sistema;
-6 - Não existem erros conhecidos que impeçam a entrega da funcionalidade.
+- 1 - Implementação concluída;
+- 2 - Código integrado ao repositório;
+- 3 - Testes realizados;
+- 4 - Critérios de aceitação atendidos;
+- 5 - Funcionalidade integrada ao sistema;
+- 6 - Não existem erros conhecidos que impeçam a entrega da funcionalidade.
 
 ## Equipe
 
