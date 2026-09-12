@@ -1,0 +1,135 @@
+:root {
+  --cor-primaria: #5b3ea6;
+  --cor-primaria-escura: #452f80;
+  --cor-erro: #d0342c;
+  --cor-sucesso: #1f7a3d;
+  --cor-fundo: #f4f2fa;
+  --cor-borda: #d8d3e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: #222;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--cor-primaria);
+}
+
+.header p {
+  margin: 4px 0 0;
+  color: #555;
+}
+
+fieldset {
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 600;
+  color: var(--cor-primaria-escura);
+}
+
+.linha {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.campo {
+  flex: 1;
+  min-width: 160px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-pequeno {
+  flex: 0 1 130px;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(91, 62, 166, 0.15);
+}
+
+.erro {
+  color: var(--cor-erro);
+  font-size: 0.8rem;
+  min-height: 1em;
+  margin-top: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--cor-primaria-escura);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback {
+  min-height: 24px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.feedback.sucesso {
+  color: var(--cor-sucesso);
+}
+
+.feedback.erro {
+  color: var(--cor-erro);
+}
