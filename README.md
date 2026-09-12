@@ -28,3 +28,6 @@ Uma história está "Done/Concluída" quando:
 - **Product Owner (PO):** Natasha Trindade
 - **Scrum Master (SM):** Douglas Honda
 - **Desenvolvedor:** Marcus Zelenato
+
+
+<img width="677" height="888" alt="image" src="https://github.com/user-attachments/assets/2e3ec0fb-f377-45c6-a984-dd904d9c285f" />
