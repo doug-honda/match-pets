@@ -16,12 +16,18 @@ Além do processo de adoção, o sistema contará com acompanhamento pós-adoç�
 
 Uma história está "Done/Concluída" quando:
 
-- 1 - Implementação concluída;
-- 2 - Código integrado ao repositório;
-- 3 - Testes realizados;
-- 4 - Critérios de aceitação atendidos;
-- 5 - Funcionalidade integrada ao sistema;
-- 6 - Não existem erros conhecidos que impeçam a entrega da funcionalidade.
+- Interface implementada
+A tela da funcionalidade foi criada e está funcionando corretamente.
+- Back-end/API funcionando
+A API responsável pela funcionalidade foi implementada e responde corretamente às solicitações.
+- Banco de dados funcionando
+Os dados necessários são armazenados e recuperados corretamente no banco de dados.
+- Interface integrada ao back-end
+A interface consegue enviar e receber os dados da API corretamente.
+- Funcionalidade testada
+Foram realizados testes para verificar se a funcionalidade atende aos critérios de aceitação.
+- Critérios de aceitação atendidos
+Todos os critérios de aceitação da história foram verificados e estão funcionando conforme esperado.
 
 ## Equipe
 
