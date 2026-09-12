@@ -31,3 +31,4 @@ Uma história está "Done/Concluída" quando:
 
 
 <img width="677" height="888" alt="image" src="https://github.com/user-attachments/assets/2e3ec0fb-f377-45c6-a984-dd904d9c285f" />
+<img width="620" height="833" alt="image" src="https://github.com/user-attachments/assets/98902332-2efa-48bc-ab73-2a4f7f93e0e7" />
