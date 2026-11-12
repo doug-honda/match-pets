@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Perfil de Adoção</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Perfil de adoção</h1>
+      <p>Conte como é a sua rotina e a sua casa. As respostas são usadas para calcular a compatibilidade com cada animal.</p>
+    </header>
+
+    <p class="aviso-lista">Conte sobre a sua rotina, a sua casa e as suas preferências. Essas respostas são usadas para indicar os animais mais compatíveis com você.</p>
+
+    <form id="form-perfil" novalidate hidden>
+      <fieldset>
+        <legend>Moradia e família</legend>
+
+        <div class="campo">
+          <label for="tipo_moradia">Tipo de moradia *</label>
+          <select id="tipo_moradia" name="tipo_moradia" required><option value="">Selecione</option><option value="apartamento">Apartamento</option><option value="casa_sem_quintal">Casa sem quintal</option><option value="casa_com_quintal">Casa com quintal</option></select>
+          <span class="erro" data-erro="tipo_moradia"></span>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="tem_criancas">Há crianças na casa? *</label>
+            <select id="tem_criancas" name="tem_criancas" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+            <span class="erro" data-erro="tem_criancas"></span>
+          </div>
+          <div class="campo">
+            <label for="tem_outros_animais">Há outros animais na casa? *</label>
+            <select id="tem_outros_animais" name="tem_outros_animais" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+            <span class="erro" data-erro="tem_outros_animais"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Rotina</legend>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="nivel_atividade">Seu nível de atividade *</label>
+            <select id="nivel_atividade" name="nivel_atividade" required><option value="">Selecione</option><option value="baixo">Baixo</option><option value="medio">Médio</option><option value="alto">Alto</option></select>
+            <small class="dica">Ex.: alto = caminhadas ou exercícios quase todos os dias.</small>
+            <span class="erro" data-erro="nivel_atividade"></span>
+          </div>
+          <div class="campo">
+            <label for="horas_sozinho">Horas por dia que o animal ficará sozinho *</label>
+            <select id="horas_sozinho" name="horas_sozinho" required><option value="">Selecione</option><option value="ate_4">Até 4 horas</option><option value="4_a_8">De 4 a 8 horas</option><option value="mais_de_8">Mais de 8 horas</option></select>
+            <span class="erro" data-erro="horas_sozinho"></span>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="ja_teve_pet">Você já teve animal de estimação? *</label>
+          <select id="ja_teve_pet" name="ja_teve_pet" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+          <span class="erro" data-erro="ja_teve_pet"></span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferências</legend>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="especie_preferida">Espécie preferida *</label>
+            <select id="especie_preferida" name="especie_preferida" required><option value="">Selecione</option><option value="cao">Cão</option><option value="gato">Gato</option><option value="indiferente">Indiferente</option></select>
+            <span class="erro" data-erro="especie_preferida"></span>
+          </div>
+          <div class="campo">
+            <label for="porte_preferido">Porte preferido *</label>
+            <select id="porte_preferido" name="porte_preferido" required><option value="">Selecione</option><option value="pequeno">Pequeno</option><option value="medio">Médio</option><option value="grande">Grande</option><option value="indiferente">Indiferente</option></select>
+            <span class="erro" data-erro="porte_preferido"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="feedback" id="feedback" role="status"></div>
+      <button type="submit" id="btn-salvar">Salvar perfil</button>
+    </form>
+
+    <div id="feedback-carga" class="feedback" role="status"></div>
+
+    <p class="rodape-link"><a href="compatibilidade.html">Ver animais compatíveis comigo →</a></p>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("perfil-adocao");</script>
+  <script src="js/perfil-adocao.js"></script>
+</body>
+</html>

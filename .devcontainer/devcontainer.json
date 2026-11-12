@@ -1,0 +1,19 @@
+{
+  "name": "Match Pets",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/match-pets",
+  "forwardPorts": [8000],
+  "postStartCommand": "python exemplos/carregar_exemplos.py --aguardar 180",
+  "portsAttributes": {
+    "8000": {
+      "label": "Match Pets (telas e API)",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

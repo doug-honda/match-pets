@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MatchPet - Cadastro do Adotante</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <h1>🐾 MatchPet</h1>
-      <p>Cadastro do Adotante</p>
+    <header class="titulo-pagina">
+      <h1>Criar cadastro</h1>
+      <p>Leva poucos minutos. Depois você conta como é a sua rotina e vê os animais que combinam com você.</p>
     </header>
 
     <form id="form-adotante" novalidate>
@@ -71,11 +71,13 @@
           <div class="campo">
             <label for="logradouro">Logradouro *</label>
             <input type="text" id="logradouro" name="logradouro" required />
+            <span class="erro" data-erro="logradouro"></span>
           </div>
 
           <div class="campo campo-pequeno">
             <label for="numero">Número *</label>
             <input type="text" id="numero" name="numero" required />
+            <span class="erro" data-erro="numero"></span>
           </div>
         </div>
 
@@ -88,6 +90,7 @@
           <div class="campo">
             <label for="bairro">Bairro *</label>
             <input type="text" id="bairro" name="bairro" required />
+            <span class="erro" data-erro="bairro"></span>
           </div>
         </div>
 
@@ -95,11 +98,13 @@
           <div class="campo">
             <label for="cidade">Cidade *</label>
             <input type="text" id="cidade" name="cidade" required />
+            <span class="erro" data-erro="cidade"></span>
           </div>
 
           <div class="campo campo-pequeno">
             <label for="estado">UF *</label>
             <input type="text" id="estado" name="estado" maxlength="2" placeholder="SP" required />
+            <span class="erro" data-erro="estado"></span>
           </div>
         </div>
       </fieldset>
@@ -108,8 +113,12 @@
 
       <button type="submit" id="btn-enviar">Criar cadastro</button>
     </form>
+
+    <p class="rodape-link">Já tem cadastro? <a href="login.html">Entrar</a></p>
   </div>
 
-  <script src="script.js"></script>
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("cadastro");</script>
+  <script src="js/cadastro.js"></script>
 </body>
 </html>

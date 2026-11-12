@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Perfil do Adotante</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Meus dados</h1>
+      <p>As informações do seu cadastro.</p>
+    </header>
+
+    <div id="feedback-perfil" class="feedback" role="status"></div>
+
+    <main id="perfil" hidden>
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <dl class="dados">
+          <dt>Nome completo</dt><dd id="p-nome"></dd>
+          <dt>CPF</dt><dd id="p-cpf"></dd>
+          <dt>Data de nascimento</dt><dd id="p-nascimento"></dd>
+        </dl>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contato</legend>
+        <dl class="dados">
+          <dt>E-mail</dt><dd id="p-email"></dd>
+          <dt>Telefone</dt><dd id="p-telefone"></dd>
+        </dl>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+        <dl class="dados">
+          <dt>Logradouro</dt><dd id="p-logradouro"></dd>
+          <dt>Bairro</dt><dd id="p-bairro"></dd>
+          <dt>Cidade / UF</dt><dd id="p-cidade"></dd>
+          <dt>CEP</dt><dd id="p-cep"></dd>
+        </dl>
+      </fieldset>
+
+      <p class="data-cadastro">Cadastro realizado em <span id="p-criado-em"></span></p>
+    </main>
+
+    <div class="acoes-pagina">
+      <a id="link-perfil-adocao" class="botao" href="perfil-adocao.html">Preencher meu perfil de adoção</a>
+      <a class="botao botao-secundario" href="compatibilidade.html">Ver animais compatíveis</a>
+    </div>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("perfil");</script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>

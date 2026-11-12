@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Animais Disponíveis</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Animais disponíveis</h1>
+      <p>Lista simples, sem recomendação. Para ver a nota de compatibilidade com o seu perfil, entre na sua conta.</p>
+    </header>
+
+    <section class="lista-animais">
+      <p id="lista-vazia" class="vazio" role="status">Carregando animais...</p>
+      <ul id="lista-animais"></ul>
+    </section>
+
+    <p class="rodape-link">Quer saber quem combina com você? <a href="login.html">Entre</a> ou <a href="index.html">crie o seu cadastro</a>.</p>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("disponiveis");</script>
+  <script src="js/animais-disponiveis.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Sobe o PostgreSQL do MatchPet com o banco "matchpet" e as tabelas de database/schema.sql já criadas.
+# Uso: docker compose up -d
+services:
+  db:
+    image: postgres:16
+    container_name: matchpet-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: matchpet
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - matchpet-dados:/var/lib/postgresql/data
+
+volumes:
+  matchpet-dados:

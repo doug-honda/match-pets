@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Entrar</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Entrar</h1>
+      <p>Acesse a sua conta para ver os animais compatíveis e acompanhar as suas adoções.</p>
+    </header>
+
+    <form id="form-login" novalidate>
+      <fieldset>
+        <legend>Acesso do adotante</legend>
+        <div class="campo">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" autocomplete="username" required />
+          <span class="erro" data-erro="email"></span>
+        </div>
+        <div class="campo">
+          <label for="senha">Senha *</label>
+          <input type="password" id="senha" name="senha" autocomplete="current-password" required />
+          <span class="erro" data-erro="senha"></span>
+        </div>
+      </fieldset>
+      <div id="feedback" class="feedback" role="status"></div>
+      <button type="submit" id="btn-entrar">Entrar</button>
+    </form>
+
+    <p class="rodape-link">Ainda não tem cadastro? <a href="index.html">Criar cadastro</a></p>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("login");</script>
+  <script src="js/login.js"></script>
+</body>
+</html>

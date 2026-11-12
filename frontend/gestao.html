@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Gestão de Adoções</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Pedidos e acompanhamento</h1>
+      <p>Analise os pedidos de adoção e veja as atualizações enviadas pelos adotantes.</p>
+    </header>
+
+    <div id="feedback" class="feedback" role="status">Carregando...</div>
+
+    <section class="lista-animais">
+      <h2>Pedidos aguardando análise</h2>
+      <ul id="lista-pendentes"></ul>
+    </section>
+    <section class="lista-animais">
+      <h2>Adoções concluídas · acompanhamento</h2>
+      <ul id="lista-aprovadas"></ul>
+    </section>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("gestao", "responsavel");</script>
+  <script src="js/acompanhamento.js"></script>
+  <script src="js/gestao.js"></script>
+</body>
+</html>

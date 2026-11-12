@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Animais Compatíveis</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Animais compatíveis</h1>
+      <p>A nota vai de 0 a 100 e compara a sua rotina, a sua casa e as suas preferências com as características de cada animal. Os mais compatíveis aparecem primeiro.</p>
+    </header>
+
+    <div id="feedback" class="feedback" role="status">Calculando compatibilidade...</div>
+    <p id="link-completar" class="acoes-pagina" hidden><a id="a-completar" class="botao" href="perfil-adocao.html">Completar meu perfil de adoção</a></p>
+
+    <section class="lista-animais">
+      <ul id="lista-compativeis"></ul>
+      <p id="eliminados" class="dica"></p>
+    </section>
+
+    <details class="criterios">
+      <summary>Como a nota é calculada</summary>
+      <ul id="lista-criterios"></ul>
+    </details>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("compatibilidade");</script>
+  <script src="js/compatibilidade.js"></script>
+</body>
+</html>

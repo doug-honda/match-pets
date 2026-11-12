@@ -1,7 +1,6 @@
 // MatchPet - Cadastro do Adotante
 // Integração da interface com a API (FastAPI)
 
-const API_URL = "http://localhost:8000";
 
 const form = document.getElementById("form-adotante");
 const feedback = document.getElementById("feedback");
@@ -59,7 +58,47 @@ function validarFormulario(dados) {
     valido = false;
   }
 
+  const obrigatoriosEndereco = {
+    logradouro: "Informe o logradouro.",
+    numero: "Informe o número.",
+    bairro: "Informe o bairro.",
+    cidade: "Informe a cidade.",
+  };
+  for (const [campo, mensagem] of Object.entries(obrigatoriosEndereco)) {
+    if (!dados[campo].trim()) {
+      mostrarErroCampo(campo, mensagem);
+      valido = false;
+    }
+  }
+
+  if (!/^[A-Za-z]{2}$/.test(dados.estado.trim())) {
+    mostrarErroCampo("estado", "Use a sigla (ex.: SP).");
+    valido = false;
+  }
+
   return valido;
+}
+
+// Traduz a resposta de erro da API em mensagens na tela.
+// Erro 422 (validação do FastAPI) chega como lista: cada item aponta o campo em "loc".
+function mostrarErroApi(corpo) {
+  const detalhe = corpo && corpo.detail;
+
+  if (Array.isArray(detalhe)) {
+    detalhe.forEach((erro) => {
+      const campo = Array.isArray(erro.loc) ? erro.loc[erro.loc.length - 1] : null;
+      const mensagem = (erro.msg || "Valor inválido.").replace(/^Value error, /, "");
+      if (campo) mostrarErroCampo(campo, mensagem);
+    });
+    return "Corrija os campos destacados antes de continuar.";
+  }
+
+  if (detalhe && typeof detalhe === "object" && detalhe.campo) {
+    mostrarErroCampo(detalhe.campo, detalhe.mensagem);
+    return detalhe.mensagem;
+  }
+
+  return typeof detalhe === "string" ? detalhe : "Não foi possível concluir o cadastro.";
 }
 
 form.addEventListener("submit", async (event) => {
@@ -85,11 +124,11 @@ form.addEventListener("submit", async (event) => {
       body: JSON.stringify(dados),
     });
 
-    const corpo = await resposta.json();
+    // Um erro 500 pode vir sem JSON; nesse caso, segue com corpo vazio.
+    const corpo = await resposta.json().catch(() => ({}));
 
     if (!resposta.ok) {
-      const mensagem = corpo.detail || "Não foi possível concluir o cadastro.";
-      feedback.textContent = mensagem;
+      feedback.textContent = mostrarErroApi(corpo);
       feedback.classList.add("erro");
       return;
     }
@@ -97,6 +136,24 @@ form.addEventListener("submit", async (event) => {
     feedback.textContent = `Cadastro criado com sucesso! Bem-vindo(a), ${corpo.nome_completo}.`;
     feedback.classList.add("sucesso");
     form.reset();
+
+    // Já entra na conta com o e-mail e a senha recém-cadastrados, para o adotante
+    // seguir pelo menu sem precisar fazer login de novo.
+    try {
+      const login = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: dados.email, senha: dados.senha }),
+      });
+      if (login.ok) Sessao.salvar(await login.json());
+    } catch (erroLogin) {
+      console.error(erroLogin);
+    }
+
+    // Leva o adotante ao próprio perfil (CA1 da HU01) depois de ler a mensagem.
+    setTimeout(() => {
+      window.location.href = `perfil.html?id=${encodeURIComponent(corpo.id)}`;
+    }, 1500);
   } catch (erro) {
     feedback.textContent = "Erro de conexão com o servidor. Tente novamente.";
     feedback.classList.add("erro");

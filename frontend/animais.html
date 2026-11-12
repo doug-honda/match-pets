@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Cadastro de Animais</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="titulo-pagina">
+      <h1>Cadastro de animais</h1>
+      <p>Cadastre os animais do abrigo e marque quais estão disponíveis para adoção.</p>
+    </header>
+
+    <form id="form-animal" novalidate>
+      <fieldset>
+        <legend>Dados do animal</legend>
+
+        <div class="campo">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" required />
+          <span class="erro" data-erro="nome"></span>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="especie">Espécie *</label>
+            <select id="especie" name="especie" required><option value="">Selecione</option><option value="cao">Cão</option><option value="gato">Gato</option></select>
+            <span class="erro" data-erro="especie"></span>
+          </div>
+          <div class="campo">
+            <label for="porte">Porte *</label>
+            <select id="porte" name="porte" required><option value="">Selecione</option><option value="pequeno">Pequeno</option><option value="medio">Médio</option><option value="grande">Grande</option></select>
+            <span class="erro" data-erro="porte"></span>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="idade_anos">Idade (anos) *</label>
+            <input type="number" id="idade_anos" name="idade_anos" min="0" max="30" step="1" required />
+            <small class="dica">Use 0 para menos de 1 ano.</small>
+            <span class="erro" data-erro="idade_anos"></span>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" rows="3"></textarea>
+          <span class="erro" data-erro="descricao"></span>
+        </div>
+
+        <div class="campo">
+          <label for="foto_animal">Foto (opcional)</label>
+          <!-- sem atributo name: a foto não vai no JSON do cadastro; é enviada em seguida -->
+          <input type="file" id="foto_animal" accept="image/jpeg,image/png,image/webp" />
+          <small class="dica">JPG, PNG ou WEBP, até 5 MB.</small>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Temperamento e convivência</legend>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="nivel_energia">Nível de energia *</label>
+            <select id="nivel_energia" name="nivel_energia" required><option value="">Selecione</option><option value="baixo">Baixo</option><option value="medio">Médio</option><option value="alto">Alto</option></select>
+            <span class="erro" data-erro="nivel_energia"></span>
+          </div>
+          <div class="campo">
+            <label for="tolerancia_sozinho">Tolerância a ficar sozinho *</label>
+            <select id="tolerancia_sozinho" name="tolerancia_sozinho" required><option value="">Selecione</option><option value="baixa">Baixa</option><option value="media">Média</option><option value="alta">Alta</option></select>
+            <span class="erro" data-erro="tolerancia_sozinho"></span>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="convive_criancas">Convive bem com crianças? *</label>
+            <select id="convive_criancas" name="convive_criancas" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+            <span class="erro" data-erro="convive_criancas"></span>
+          </div>
+          <div class="campo">
+            <label for="convive_outros_animais">Convive bem com outros animais? *</label>
+            <select id="convive_outros_animais" name="convive_outros_animais" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+            <span class="erro" data-erro="convive_outros_animais"></span>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="exige_experiencia">Exige tutor com experiência? *</label>
+            <select id="exige_experiencia" name="exige_experiencia" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+            <span class="erro" data-erro="exige_experiencia"></span>
+          </div>
+          <div class="campo">
+            <label for="disponivel">Disponível para adoção? *</label>
+            <select id="disponivel" name="disponivel" required><option value="">Selecione</option><option value="true">Sim</option><option value="false">Não</option></select>
+            <span class="erro" data-erro="disponivel"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div id="feedback" class="feedback" role="status"></div>
+      <button type="submit" id="btn-enviar">Cadastrar animal</button>
+    </form>
+
+    <section class="lista-animais">
+      <h2>Disponíveis para adoção</h2>
+      <p id="lista-vazia" class="vazio">Nenhum animal disponível no momento.</p>
+      <ul id="lista-animais"></ul>
+    </section>
+
+    <section class="lista-animais" id="secao-indisponiveis" hidden>
+      <h2>Indisponíveis</h2>
+      <ul id="lista-indisponiveis"></ul>
+    </section>
+
+
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script>montarMenu("animais", "responsavel");</script>
+  <script src="js/animais.js"></script>
+</body>
+</html>

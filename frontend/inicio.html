@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPet - Adoção responsável</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="pagina-inicio">
+  <main class="inicio">
+    <p class="inicio-marca"><span aria-hidden="true">🐾</span> MatchPet</p>
+    <p class="inicio-texto">Encontre o animal que combina com a sua rotina.</p>
+
+    <div class="inicio-acoes">
+      <a class="botao" href="login.html">Entrar</a>
+      <a class="botao botao-secundario" href="index.html">Criar cadastro</a>
+    </div>
+
+    <p id="ja-logado" class="inicio-logado" hidden></p>
+    <p class="inicio-rodape"><a href="animais.html">Sou responsável por um abrigo</a></p>
+  </main>
+
+  <script src="js/sessao.js"></script>
+  <script>
+    // Quem já entrou vê um atalho direto para os animais compatíveis.
+    const sessaoAtual = Sessao.obter();
+    if (sessaoAtual) {
+      const aviso = document.getElementById("ja-logado");
+      aviso.innerHTML = `Você já entrou como <b></b>. <a href="compatibilidade.html">Ver animais compatíveis →</a>`;
+      aviso.querySelector("b").textContent = sessaoAtual.nome_completo.split(" ")[0];
+      aviso.hidden = false;
+    }
+  </script>
+</body>
+</html>
